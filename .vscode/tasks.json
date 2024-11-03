@@ -1,0 +1,52 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "startup",
+            "dependsOn": ["node-red", "rasa-terminal"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "node-red",
+            "type": "shell",
+            "command": [ "npm start"],
+            "windows": {
+                "command": "npm start"
+                },
+            "group": "build",
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "panel": "new"
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "rasa-terminal",
+            "type": "shell",
+            "command": [
+                        "[ -z \"$VIRTUAL_ENV\" ] && [ -d .venv ] && source .venv/bin/activate; spacy download en_core_web_md;" 
+                       ],  
+            "windows": {
+                "command": ".venv/Scripts/activate.bat; spacy download en_core_web_md;"
+                },
+            "group": "build",
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "panel": "dedicated",
+                "focus": true
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
