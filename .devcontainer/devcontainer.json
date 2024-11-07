@@ -6,11 +6,13 @@
 		"name": "Python 3",
 		"image": "mcr.microsoft.com/devcontainers/python:1-3.10-bullseye",
 		"features": {
-    	"ghcr.io/devcontainers/features/node:1": {
-      		"version": "lts"  // This installs Node.js LTS version
-   	 	},
-		"extensions": [	"redhat.vscode-yaml"  ]
-  	},
+    			"ghcr.io/devcontainers/features/node:1": {
+      				"version": "lts"  // This installs Node.js LTS version
+   	 		}
+		},
+		"extensions": [
+			"redhat.vscode-yaml" 
+		],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [5005, 1880],
