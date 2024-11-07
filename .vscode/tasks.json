@@ -31,7 +31,7 @@
             "label": "rasa-terminal",
             "type": "shell",
             "command": [
-                        "[ -z \"$VIRTUAL_ENV\" ] && [ -d .venv ] && source .venv/bin/activate; spacy download en_core_web_md;" 
+                        "export RASA_TELEMETRY_ENABLED=false && [ -z \"$VIRTUAL_ENV\" ] && [ -d .venv ] && source .venv/bin/activate; spacy download en_core_web_md;" 
                        ],  
             "windows": {
                 "command": ".venv/Scripts/activate.bat; spacy download en_core_web_md;"
